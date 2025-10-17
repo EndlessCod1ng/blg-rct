@@ -3,18 +3,17 @@ import { Configuration } from "webpack";
 import path from "path";
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { ProgressPlugin } from "webpack";
-type BuildMode = "development" | "production";
-interface BuildEnv {
-  port: number;
-  mode: BuildMode;
-}
+import { BuildEnv, BuildPaths } from "./config/build/types/build";
+import buildPlugins from "./config/build/buildPlugins";
+import { buildLoaders } from "./config/build/buildLoaders";
+
 
 const config = (env: BuildEnv): Configuration => {
 
   const mode = env.mode || "development";
   const isDev = mode === "development";
-  
-  const buildPaths = {
+
+  const buildPaths: BuildPaths = {
     entry: path.resolve(__dirname, "src", "index.ts"),
     build: path.resolve(__dirname, 'dist'),
     html: path.resolve(__dirname, "public", "index.html"),
@@ -29,21 +28,9 @@ const config = (env: BuildEnv): Configuration => {
       path: buildPaths.build,
       clean: true
     },
-    plugins: [
-      new HtmlWebpackPlugin({
-        template: buildPaths.html,
-        favicon: buildPaths.favicon,
-      }),
-      new ProgressPlugin()
-    ],
+    plugins: buildPlugins(buildPaths),
     module: {
-      rules: [
-        {
-          test: /\.tsx?$/,
-          use: 'ts-loader',
-          exclude: /node_modules/,
-        },
-      ],
+      rules: buildLoaders(),
     },
     resolve: {
       extensions: ['.tsx', '.ts', '.js'],
