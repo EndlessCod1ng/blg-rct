@@ -3,13 +3,14 @@
     "outDir": "./dist/",
     "sourceMap": true,
     "noImplicitAny": true,
-      "module": "esnext",
+    "module": "esnext",
     "target": "es5",
     "jsx": "react-jsx",
     "allowJs": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "strict": true
   },
   "ts-node": {
     "compilerOptions": {

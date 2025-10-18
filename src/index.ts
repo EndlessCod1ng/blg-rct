@@ -1,3 +1,1 @@
-import { someFn } from "./test";
-
-someFn(123456);
+document.body.innerHTML = "<div>123lkjhfhghsdfgkj</div>";

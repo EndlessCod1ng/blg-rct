@@ -10,3 +10,10 @@ export interface BuildPaths {
   html: string;
   favicon: string;
 }
+
+export interface BuildOptions {
+  buildPaths: BuildPaths;
+  mode: BuildMode;
+  isDev: boolean;
+  port: number;
+}
