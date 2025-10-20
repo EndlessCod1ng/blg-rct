@@ -17,6 +17,13 @@ export function buildLoaders(isDev: boolean): RuleSetRule[] {
       // Translates CSS into CommonJS
       {
         loader: "css-loader",
+        options: {
+          modules: {
+            auto: /\.module\.\w+$/i,
+            namedExport: false,
+            localIdentName: isDev ? "[path][name]__[local]--[hash:base64:5]" : "[hash:base64:8]",
+          },
+        },
       },
       // Compiles Sass to CSS
       "sass-loader",

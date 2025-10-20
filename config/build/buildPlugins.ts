@@ -11,7 +11,10 @@ export default function buildPlugins(buildPaths: BuildPaths): WebpackPluginInsta
       favicon: buildPaths.favicon,
     }),
     new ProgressPlugin(),
-    new MiniCssExtractPlugin()
+    new MiniCssExtractPlugin({
+      filename: "css/[name].[contenthash:8].css",
+      chunkFilename: "css/[name].[contenthash:8].css",
+    })
   ];
 
 };

@@ -11,7 +11,7 @@ export function buildWebpackConfig(buildOptions: BuildOptions): Configuration {
     mode: mode,
     entry: buildPaths.entry,
     output: {
-      filename: '[name].[contenhas].js',
+      filename: '[name].[contenthash].js',
       path: buildPaths.build,
       clean: true
     },
