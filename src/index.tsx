@@ -4,9 +4,13 @@ import { App } from "./app/App";
 
 import "./app/styles/index.scss";
 
+import { ThemeProvider } from "./app/providers/ThemeProvider/ThemeProvider";
+
 const root = createRoot(document.getElementById("root") as HTMLElement);
 root.render(
   <BrowserRouter>
-    <App />
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
   </BrowserRouter>
 );
