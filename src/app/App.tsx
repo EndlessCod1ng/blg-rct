@@ -3,12 +3,14 @@ import { Link, Route, Routes } from "react-router";
 import { HomePage } from "../pages/HomePage";
 import { ProfilePage } from "../pages/ProfilePage";
 
+import { useTheme } from "./providers/ThemeProvider/useTheme";
+
 import "./App.css";
-import { useTheme } from "./providers/ThemeProvider/ThemeProvider";
+import { NotFoundPage } from "../pages/NotFoundPage";
 
 export function App() {
   const { theme, setTheme } = useTheme();
-  
+
   return (
     <div className={`app app_${theme}_theme`}>
       <Link to={"/"}>Home</Link>
@@ -25,6 +27,10 @@ export function App() {
           <Route
             path="/profile"
             element={<ProfilePage />}
+          />
+          <Route
+            path="/*"
+            element={<NotFoundPage />}
           />
         </Routes>
       </Suspense>
