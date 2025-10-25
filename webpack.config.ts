@@ -14,7 +14,8 @@ export default (env: BuildEnv): Configuration => {
     entry: resolve(__dirname, "src", "index.tsx"),
     build: resolve(__dirname, 'build'),
     html: resolve(__dirname, "public", "index.html"),
-    favicon: resolve(__dirname, "public", "favicon.ico")
+    favicon: resolve(__dirname, "public", "favicon.ico"),
+    src: resolve(__dirname, "src")
   };
 
   const config = buildWebpackConfig({ mode, isDev, buildPaths, port: PORT });

@@ -1,6 +1,7 @@
+import { ThemeContext } from "@/app/providers/ThemeProvider/ThemeContext";
+import { Theme } from "@/app/providers/ThemeProvider/ThemeProvider";
 import { useContext } from "react";
-import { ThemeContext } from "./ThemeContext";
-import { Theme } from "./ThemeProvider";
+;
 
 
 export interface UseThemeResult {

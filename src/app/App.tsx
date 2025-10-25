@@ -1,13 +1,12 @@
+import { HomePage } from "@/pages/HomePage";
+import { NotFoundPage } from "@/pages/NotFoundPage";
+import { ProfilePage } from "@/pages/ProfilePage";
+import { useTheme } from "@/shared/lib/useTheme";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { Suspense } from "react";
 import { Link, Route, Routes } from "react-router";
-import { HomePage } from "../pages/HomePage";
-import { ProfilePage } from "../pages/ProfilePage";
 
-import { useTheme } from "./providers/ThemeProvider/useTheme";
 
-import "./App.css";
-import { NotFoundPage } from "../pages/NotFoundPage";
-import { classNames } from "../shared/classNames/classNames";
 
 export function App() {
   const { theme, setTheme } = useTheme();
