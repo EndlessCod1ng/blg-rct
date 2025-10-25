@@ -1,15 +1,15 @@
 import { Counter } from "../../../components/Counter";
 
-interface HomePageProps {
+interface MainPageProps {
   className?: string;
 }
-const HomePage = ({ className }: HomePageProps) => {
+const MainPage = ({ className }: MainPageProps) => {
   return (
     <div className={`${className ? className : ""}`}>
-      <div>HomePage</div>
+      <div>MainPage</div>
       <Counter />
     </div>
   );
 };
 
-export default HomePage;
+export default MainPage;

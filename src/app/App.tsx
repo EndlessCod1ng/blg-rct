@@ -1,12 +1,9 @@
-import { HomePage } from "@/pages/HomePage";
-import { NotFoundPage } from "@/pages/NotFoundPage";
-import { ProfilePage } from "@/pages/ProfilePage";
+import { Suspense } from "react";
+import { Link } from "react-router";
+
 import { useTheme } from "@/shared/lib/useTheme";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { Suspense } from "react";
-import { Link, Route, Routes } from "react-router";
-
-
+import { AppRouter } from "./providers/router/ui/AppRouter";
 
 export function App() {
   const { theme, setTheme } = useTheme();
@@ -18,22 +15,7 @@ export function App() {
 
       <button onClick={setTheme}>Theme</button>
 
-      <Suspense fallback={<div>loading...</div>}>
-        <Routes>
-          <Route
-            path="/"
-            element={<HomePage />}
-          />
-          <Route
-            path="/profile"
-            element={<ProfilePage />}
-          />
-          <Route
-            path="/*"
-            element={<NotFoundPage />}
-          />
-        </Routes>
-      </Suspense>
+      <AppRouter />
     </div>
   );
 }
