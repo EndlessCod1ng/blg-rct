@@ -15,11 +15,13 @@ export const AppLink = ({
   to = "/",
   colorType = "ivertedPrimary",
   className,
+  ...otherProps
 }: AppLinkProps) => {
   return (
     <Link
       to={to}
       className={classNames(s.appLink, {}, [s[colorType], className])}
+      {...otherProps}
     >
       {children}
     </Link>
