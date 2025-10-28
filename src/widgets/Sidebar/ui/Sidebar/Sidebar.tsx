@@ -4,11 +4,16 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import { AppButton } from "@/shared/ui/AppButton/AppButton";
 import { AppLink } from "@/shared/ui/AppLink/AppLink";
 import { ThemeSwitcher } from "@/features/ThemeSwitcher/ui/ThemeSwitcher";
+import { useTranslation } from "react-i18next";
+import { LanguageSwitcher } from "@/features/LanguageSwitcher";
+
 interface SidebarProps {
   className?: string;
 }
+
 export const Sidebar = ({ className }: SidebarProps) => {
   const [collapsed, setCollapsed] = useState<boolean>(false);
+  const { t } = useTranslation();
   return (
     <div
       className={classNames(s.sidebar, { [s.collapsed]: collapsed }, [
@@ -16,8 +21,8 @@ export const Sidebar = ({ className }: SidebarProps) => {
       ])}
     >
       <div className={s.links}>
-        <AppLink to={"/"}>Home</AppLink>
-        <AppLink to={"/profile"}>Profile</AppLink>
+        <AppLink to={"/"}>{t("Home")}</AppLink>
+        <AppLink to={"/profile"}>{t("Profile")}</AppLink>
       </div>
       <AppButton
         className={s.btn}
@@ -28,6 +33,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
       </AppButton>
       <div className={s.switchers}>
         <ThemeSwitcher />
+        <LanguageSwitcher collapsed={collapsed} />
       </div>
     </div>
   );
