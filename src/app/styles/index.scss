@@ -9,9 +9,36 @@ body,
 #app,
 .app {
   font: var(--font-m);
-
   background: var(--bg-color);
   color: var(--primary-color);
-
   min-height: 100vh;
 }
+
+.content {
+  display: flex;
+}
+
+.appRouter {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+// .app {
+//   display: grid;
+//   grid-template-areas:
+//     "n n"
+//     "s aR";
+// }
+
+// .navbar {
+//   grid-area: n;
+// }
+
+// .sidebar {
+//   grid-area: s;
+//   width: 80px;
+// }
+
+// .appRouter {
+//   grid-area: aR;
+// }
