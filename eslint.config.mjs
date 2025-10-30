@@ -9,10 +9,10 @@ import { defineConfig } from "eslint/config";
 export default defineConfig([
   {
     files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"], plugins: { js }, extends: ["js/recommended"], languageOptions: { globals: globals.browser },
-    rules: {
-      "react/react-in-jsx-scope": "off",
-      "no-unused-vars": "warn"
-    },
+    "rules": {
+      "no-unused-vars": "warn",
+
+    }
   },
 
   tseslint.configs.recommended,

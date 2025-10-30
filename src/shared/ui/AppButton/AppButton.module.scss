@@ -1,17 +1,45 @@
 .appButton {
   cursor: pointer;
+  padding: 6px 12px;
 }
 
 .clear {
   background: none;
   outline: none;
   border: none;
+  transition: var(--transition-delay) linear color;
+
+  &.background {
+    color: var(--bg-color);
+  }
+
+  .backgroundInverted {
+    color: var(--inverted-bg-color);
+  }
+
+  &:hover {
+    color: var(--accented-color);
+  }
 }
 
-.background {
-  color: var(--bg-color);
-}
+.outlined {
+  background: none;
+  outline: none;
+  transition: var(--transition-delay) linear all;
 
-.backgroundInverted {
-  color: var(--inverted-bg-color);
+  &.background {
+    color: var(--bg-color);
+    border: 1px solid var(--bg-color);
+    border-radius: 10px;
+  }
+
+  .backgroundInverted {
+    color: var(--inverted-bg-color);
+  }
+
+  &:hover {
+    border: 1px solid var(--accented-color);
+    border-radius: 10px;
+    color: var(--accented-color);
+  }
 }

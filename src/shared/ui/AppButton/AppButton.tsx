@@ -2,8 +2,8 @@ import { ButtonHTMLAttributes, ReactNode } from "react";
 import s from "./AppButton.module.scss";
 import { classNames } from "@/shared/lib/classNames/classNames";
 
-type ColorType = "background" | "backgroundInverted";
 type ButtonVariant = "clear" | "outlined" | "filled";
+type ColorType = "background" | "backgroundInverted";
 
 interface AppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
