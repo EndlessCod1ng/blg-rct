@@ -4,9 +4,19 @@
 
 .primary {
   color: var(--primary-color);
+  transition: var(--transition-delay) linear all;
+
+  &:hover {
+    color: var(--accented-color);
+  }
 }
 
 .ivertedPrimary {
   color: var(--inverted-primary-color);
+  transition: var(--transition-delay) linear all;
+
+  &:hover {
+    color: var(--accented-color);
+  }
 
 }

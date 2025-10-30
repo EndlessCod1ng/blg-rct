@@ -21,6 +21,7 @@ export const AppButton = ({
 }: AppButtonProps) => {
   return (
     <button
+      type="button"
       className={classNames(s.appButton, {}, [
         s[colorType],
         s[variant],
