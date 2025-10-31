@@ -8,11 +8,13 @@ import { defineConfig } from "eslint/config";
 
 export default defineConfig([
   {
-    files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"], plugins: { js }, extends: ["js/recommended"], languageOptions: { globals: globals.browser },
-    "rules": {
+    files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"], plugins: { js },
+    extends: ["js/recommended", "plugin:i18next/recommended"], languageOptions: { globals: globals.browser },
+    rules: {
       "no-unused-vars": "warn",
-
-    }
+      "i18next/no-literal-string": ["error", { markupOnly: true }]
+    },
+    plugins: ["i18next"]
   },
 
   tseslint.configs.recommended,
