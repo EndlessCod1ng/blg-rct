@@ -3,13 +3,16 @@ import s from "./AppRouter.module.scss";
 import { Suspense } from "react";
 import { routeConfig } from "@/shared/config/routeConfig/routeConfig";
 import { classNames } from "@/shared/lib/classNames/classNames";
+import { useTranslation } from "react-i18next";
+import { PageLoader } from "@/widgets/PageLoader";
 interface AppRouterProps {
   className?: string;
 }
 export const AppRouter = ({ className }: AppRouterProps) => {
+  const { t } = useTranslation();
   return (
     <div className={classNames(s.appRouter, {}, [className])}>
-      <Suspense fallback={<div>loading...</div>}>
+      <Suspense fallback={<PageLoader/>}>
         <Routes>
           {Object.values(routeConfig).map(({ element, path }) => (
             <Route
@@ -20,6 +23,7 @@ export const AppRouter = ({ className }: AppRouterProps) => {
           ))}
         </Routes>
       </Suspense>
+      
     </div>
   );
 };

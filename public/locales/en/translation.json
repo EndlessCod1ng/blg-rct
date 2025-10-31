@@ -1,6 +1,8 @@
 {
-  "Home":"Home",
-  "Profile":"Profile",
-  "ShortLang":"En",
-  "Lang":"English"
+  "Home": "Home",
+  "Profile": "Profile",
+  "ShortLang": "En",
+  "Lang": "English",
+  "Page Not Found": "Page Not Found",
+  "Loading": "Loading"
 }

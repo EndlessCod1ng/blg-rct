@@ -6,7 +6,6 @@ interface MainPageProps {
 const MainPage = ({ className }: MainPageProps) => {
   return (
     <div className={`${className ? className : ""}`}>
-      <div>MainPage</div>
       <Counter />
     </div>
   );
