@@ -6,12 +6,15 @@ import { App } from "./app/App";
 import "./app/styles/index.scss";
 
 import { ThemeProvider } from "./app/providers/ThemeProvider/ThemeProvider";
+import { ErrorBoundary } from "./app/providers/ErrorBoundary/ui/ErrorBoundary";
 
 const root = createRoot(document.getElementById("root") as HTMLElement);
 root.render(
-  <BrowserRouter>
-    <ThemeProvider>
-      <App />
-    </ThemeProvider>
-  </BrowserRouter>
+  <ErrorBoundary>
+    <BrowserRouter>
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
+    </BrowserRouter>
+  </ErrorBoundary>
 );
