@@ -4,5 +4,8 @@
   "ShortLang": "En",
   "Lang": "English",
   "Page Not Found": "Page Not Found",
-  "Loading": "Loading"
+  "Loading": "Loading",
+  "An unexpected error occurred": "An unexpected error occurred",
+  "Refresh page": "Refresh page",
+  "throw error": "throw error"
 }

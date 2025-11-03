@@ -13,7 +13,7 @@
     color: var(--bg-color);
   }
 
-  .backgroundInverted {
+  &.backgroundInverted {
     color: var(--inverted-bg-color);
   }
 
@@ -23,6 +23,7 @@
 }
 
 .outlined {
+  border-radius: 10px;
   background: none;
   outline: none;
   transition: var(--transition-delay) linear all;
@@ -30,16 +31,15 @@
   &.background {
     color: var(--bg-color);
     border: 1px solid var(--bg-color);
-    border-radius: 10px;
   }
 
-  .backgroundInverted {
+  &.backgroundInverted {
+    border: 1px solid var(--inverted-bg-color);
     color: var(--inverted-bg-color);
   }
 
   &:hover {
     border: 1px solid var(--accented-color);
-    border-radius: 10px;
     color: var(--accented-color);
   }
 }

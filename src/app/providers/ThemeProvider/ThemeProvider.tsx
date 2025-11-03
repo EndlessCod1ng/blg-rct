@@ -22,6 +22,8 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
     [theme]
   );
 
+  // document.body.className = `app_theme_${theme}`;
+
   return (
     <ThemeContext.Provider value={defaultProps}>
       {children}

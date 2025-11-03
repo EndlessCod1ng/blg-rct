@@ -4,5 +4,8 @@
   "ShortLang":"Ру",
   "Lang":"Русский",
   "Page Not Found": "Страница не найдена",
-  "Loading": "Загрузка"
+  "Loading": "Загрузка",
+  "An unexpected error occurred":"Произошла непредвиденная ошибка",
+    "Refresh page": "Обновить страницу",
+    "throw error": "Выдать ошибку"
 }
