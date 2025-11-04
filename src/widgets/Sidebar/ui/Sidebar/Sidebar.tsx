@@ -16,6 +16,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
   const { t } = useTranslation();
   return (
     <div
+      data-testid={"sidebar"}
       className={classNames(s.sidebar, { [s.collapsed]: collapsed }, [
         className,
       ])}
@@ -26,7 +27,8 @@ export const Sidebar = ({ className }: SidebarProps) => {
       </div>
       <AppButton
         className={s.btn}
-        colorType="background"
+        colorType="backgroundInverted"
+        variant="filled"
         onClick={() => setCollapsed((prev) => !prev)}
       >
         {collapsed === true ? ">" : "<"}

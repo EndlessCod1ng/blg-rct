@@ -8,7 +8,9 @@ export const LanguageSwitcher = ({ collapsed }: LanguageSwitcherProps) => {
   const { t, i18n } = useTranslation();
   return (
     <AppButton
-      onClick={() => i18n.changeLanguage(i18n.language === "en" ? "ru" : "en")}
+      onClick={async () =>
+        i18n.changeLanguage(i18n.language === "en" ? "ru" : "en")
+      }
       colorType="background"
     >
       {collapsed ? t("ShortLang") : t("Lang")}

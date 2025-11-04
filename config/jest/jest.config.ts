@@ -4,6 +4,7 @@
  */
 
 import type { Config } from 'jest';
+import path from 'path';
 
 const config: Config = {
   // Automatically clear mock calls, instances, contexts and results before every test
@@ -28,6 +29,7 @@ const config: Config = {
   moduleNameMapper: {
     "\\.(css|scss|sass|less)$": "identity-obj-proxy",
     '@/(.*)': '<rootDir>/src/$1',
+    "\\.svg": path.resolve(__dirname,"jestEmptyComponent.tsx")
   },
 
   // An array of file extensions your modules use

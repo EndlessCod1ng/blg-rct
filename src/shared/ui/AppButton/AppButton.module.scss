@@ -1,13 +1,13 @@
 .appButton {
   cursor: pointer;
-  padding: 6px 12px;
+  padding: 4px 8px;
 }
 
 .clear {
   background: none;
   outline: none;
   border: none;
-  transition: var(--transition-delay) linear color;
+  transition: var(--transition-delay) linear transform;
 
   &.background {
     color: var(--bg-color);
@@ -18,7 +18,7 @@
   }
 
   &:hover {
-    color: var(--accented-color);
+    transform: scale(1.05);
   }
 }
 
@@ -41,5 +41,19 @@
   &:hover {
     border: 1px solid var(--accented-color);
     color: var(--accented-color);
+  }
+}
+
+.filled {
+  border: 1px solid transparent;
+
+  &.background {
+    color: var(--inverted-bg-color);
+    background: var(--bg-color);
+  }
+
+  &.backgroundInverted {
+    color: var(--bg-color);
+    background: var(--inverted-bg-color);
   }
 }
