@@ -1,11 +1,13 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { BuildOptions } from "./types/build";
-import { DefinePlugin, ProgressPlugin, WebpackPluginInstance } from "webpack";
+import { DefinePlugin, ProgressPlugin, WebpackPluginInstance } from "webpack"
+  ;
+import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 
 
 export default function buildPlugins({ buildPaths, isDev }: BuildOptions): WebpackPluginInstance[] {
-  return [
+  const plugins: WebpackPluginInstance[] = [
     new HtmlWebpackPlugin({
       template: buildPaths.html,
       favicon: buildPaths.favicon,
@@ -17,7 +19,11 @@ export default function buildPlugins({ buildPaths, isDev }: BuildOptions): Webpa
     }),
     new DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev)
-    })
-  ];
+    }),
 
+  ];
+  if (isDev) {
+    plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }));
+  }
+  return plugins;
 };

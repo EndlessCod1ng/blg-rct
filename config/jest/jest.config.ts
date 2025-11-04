@@ -19,6 +19,16 @@ const config: Config = {
   moduleDirectories: [
     "node_modules"
   ],
+  roots: [
+    '<rootDir>/src'
+  ],
+  transform: {
+    '^.+\\.tsx?$': 'ts-jest'
+  },
+  moduleNameMapper: {
+    "\\.(css|scss|sass|less)$": "identity-obj-proxy",
+    '@/(.*)': '<rootDir>/src/$1',
+  },
 
   // An array of file extensions your modules use
   moduleFileExtensions: [
@@ -41,6 +51,7 @@ const config: Config = {
   testMatch: [
     "<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)"
   ],
+  setupFilesAfterEnv: ['<rootDir>/config/jest/setupTest.ts']
 
   // All imported modules in your tests should be mocked automatically
   // automock: false,
