@@ -21,10 +21,10 @@ export const Sidebar = ({ className }: SidebarProps) => {
         className,
       ])}
     >
-      <div className={s.links}>
+      {/* <div className={s.links}>
         <AppLink to={"/"}>{t("Home")}</AppLink>
         <AppLink to={"/profile"}>{t("Profile")}</AppLink>
-      </div>
+      </div> */}
       <AppButton
         className={s.btn}
         colorType="backgroundInverted"

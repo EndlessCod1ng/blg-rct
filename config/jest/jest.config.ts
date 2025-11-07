@@ -24,12 +24,16 @@ const config: Config = {
     '<rootDir>/src'
   ],
   transform: {
-    '^.+\\.tsx?$': 'ts-jest'
+    '^.+\\.tsx?$': 'ts-jest',
+    "^.+\\.svg$": "jest-transformer-svg",
   },
   moduleNameMapper: {
     "\\.(css|scss|sass|less)$": "identity-obj-proxy",
     '@/(.*)': '<rootDir>/src/$1',
-    "\\.svg": path.resolve(__dirname,"jestEmptyComponent.tsx")
+    // "\\.svg": "<rootDir>/__mocks__/svgrMock.js", 
+    // "^.+\\.svg$": "jest-transform-stub",
+
+
   },
 
   // An array of file extensions your modules use
